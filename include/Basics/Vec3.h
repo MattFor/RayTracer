@@ -20,6 +20,7 @@ public:
     };
 
     double x = 0.0;
+    double y = 0.0;
     double z = 0.0;
 
     Vec3 operator - () const
@@ -69,7 +70,6 @@ public:
     {
         return this->x*this->x + this->y*this->y + this->z*this->z;
     };
-    double y = 0.0;
 };
 
 inline std::ostream& operator << (std::ostream& out, const Vec3& v)
@@ -112,7 +112,7 @@ inline double dot_prod (const Vec3& u, const Vec3& v)
     return u.x*v.x + u.y*v.y + u.z*v.z;
 }
 
-inline Vec3 cross (const Vec3& u, const Vec3& v)
+inline Vec3 cross_prod (const Vec3& u, const Vec3& v)
 {
     return Vec3 (u.y*v.z - u.z*v.y,
                  u.z*v.x - u.x*v.z,

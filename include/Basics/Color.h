@@ -18,7 +18,7 @@ public:
         this->z = v.z;
     };
 
-    static void display (std::ostream& out, const Color& point_rgb);
+    static void display (std::ostream&, const Color&);
 };
 
 

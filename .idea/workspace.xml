@@ -20,17 +20,21 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb0ad159-ae3b-4f91-8e2c-2b61f430589b" name="Changes" comment="Starting up.">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image_result.ppm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include/Ray.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Ray.cpp" afterDir="false" />
+    <list default="true" id="bb0ad159-ae3b-4f91-8e2c-2b61f430589b" name="Changes" comment="Added a sphere, rays and better hit detection.">
+      <change afterPath="$PROJECT_DIR$/include/Basics/Intersectable.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include/SceneObjects/Sphere.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Basics/Intersectable.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SceneObjects/Sphere.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/Color.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Color.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/Vec3.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Vec3.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image_result.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/image_result.ppm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/Color.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Basics/Color.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/Ray.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Basics/Ray.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/Vec3.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Basics/Vec3.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Color.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Basics/Color.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ray.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Basics/Ray.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vec3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Basics/Vec3.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,6 +116,9 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Programming\C++\RayTracer\include\SceneObjects" />
+      <recent name="E:\Programming\C++\RayTracer\src\Basics" />
+      <recent name="E:\Programming\C++\RayTracer\include\Basics" />
       <recent name="E:\Programming\C++\RayTracer\include" />
       <recent name="E:\Programming\C++\RayTracer\src" />
     </key>
@@ -138,7 +145,7 @@
       <updated>1712956250582</updated>
       <workItem from="1712956252067" duration="1761000" />
       <workItem from="1713024886059" duration="359000" />
-      <workItem from="1713025254093" duration="11397000" />
+      <workItem from="1713025254093" duration="14697000" />
     </task>
     <task id="LOCAL-00001" summary="Starting up.">
       <option name="closed" value="true" />
@@ -164,7 +171,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713029117115</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added a sphere, rays and better hit detection.">
+      <option name="closed" value="true" />
+      <created>1713037850282</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1713037850282</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,7 +193,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Starting up." />
-    <option name="LAST_COMMIT_MESSAGE" value="Starting up." />
+    <MESSAGE value="Added a sphere, rays and better hit detection." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a sphere, rays and better hit detection." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

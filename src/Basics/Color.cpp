@@ -2,7 +2,7 @@
 // Created by MattFor on 13.04.2024.
 //
 
-#include "../include/Color.h"
+#include "../../include/Basics/Color.h"
 
 void Color::display (std::ostream& out, const Color& point_rgb)
 {
