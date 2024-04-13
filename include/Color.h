@@ -8,7 +8,10 @@
 
 #include "Vec3.h"
 
-class Color : public Vec3 {};
+class Color : public Vec3 {
+public:
+    static void display (std::ostream& out, const Color& point_rgb);
+};
 
 
 #endif //RAYTRACER_COLOR_H

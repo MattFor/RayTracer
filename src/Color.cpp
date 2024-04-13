@@ -4,7 +4,7 @@
 
 #include "../include/Color.h"
 
-void write_color (std::ostream& out, const Color& point_rgb)
+void Color::display (std::ostream& out, const Color& point_rgb)
 {
     int r_byte = int (255.999 * point_rgb.x);
     int g_byte = int (255.999 * point_rgb.y);
