@@ -7,4 +7,6 @@ add_executable(RayTracer main.cpp
         src/Vec3.cpp
         include/Vec3.h
         src/Color.cpp
-        include/Color.h)
+        include/Color.h
+        src/Ray.cpp
+        include/Ray.h)

@@ -11,7 +11,8 @@
 
 class Vec3 {
 public:
-    explicit Vec3(double x, double y, double z)
+    explicit Vec3 () : x(0.0), y(0.0), z(0.0) {};
+    explicit Vec3 (double x, double y, double z)
     {
         this->x = x;
         this->y = y;
