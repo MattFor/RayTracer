@@ -6,9 +6,9 @@
 #define RAYTRACER_SPHERE_H
 
 
-#include "../Basics/Intersectable.h"
+#include "Intersectable.h"
 
-class Sphere : Intersectable {
+class Sphere : public Intersectable {
 public:
     Sphere (const Vec3& center, double radius) : center(center), radius(fmax(0, radius)) {};
     bool hit (const Ray&, double ray_smin, double ray_smax, IntersectionInfo&) const override;

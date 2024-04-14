@@ -22,7 +22,7 @@ bool Sphere::hit (const Ray& r, double ray_smin, double ray_smax, IntersectionIn
     // - vector dotted with itself is just the length of itself squared
     // - the equation simplifies if "-2H" is substituted for "B"
     //
-    // Currently moved from main.cpp due to better SceneObject management.
+    // Currently moved from main.cpp due to better Intersectable management.
     double dlt = H*H - A*C;
 
     if (dlt < 0)
@@ -34,10 +34,10 @@ bool Sphere::hit (const Ray& r, double ray_smin, double ray_smax, IntersectionIn
     double intersect_point = (H - dlt_sqrt) / A;
 
     // Find intersection point which lies within the acceptable range
-    if (intersect_point <= ray_smin || intersect_point <= intersect_point)
+    if (intersect_point <= ray_smin || intersect_point >= ray_smax)
     {
         intersect_point = (H + dlt_sqrt) / A;
-        if (intersect_point <= ray_smin || intersect_point <= intersect_point)
+        if (intersect_point <= ray_smin || intersect_point >= ray_smax)
         {
             return false;
         }

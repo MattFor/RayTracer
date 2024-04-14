@@ -10,7 +10,10 @@ add_executable(RayTracer main.cpp
         include/Basics/Color.h
         src/Basics/Ray.cpp
         include/Basics/Ray.h
-        src/Basics/Intersectable.cpp
-        include/Basics/Intersectable.h
+        src/SceneObjects/Intersectable.cpp
+        include/SceneObjects/Intersectable.h
         src/SceneObjects/Sphere.cpp
-        include/SceneObjects/Sphere.h)
+        include/SceneObjects/Sphere.h
+        src/SceneObjects/IntersectableList.cpp
+        include/SceneObjects/IntersectableList.h
+        include/RayTracer.h)

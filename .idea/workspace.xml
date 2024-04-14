@@ -20,21 +20,19 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb0ad159-ae3b-4f91-8e2c-2b61f430589b" name="Changes" comment="Added a sphere, rays and better hit detection.">
-      <change afterPath="$PROJECT_DIR$/include/Basics/Intersectable.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include/SceneObjects/Sphere.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Basics/Intersectable.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SceneObjects/Sphere.cpp" afterDir="false" />
+    <list default="true" id="bb0ad159-ae3b-4f91-8e2c-2b61f430589b" name="Changes" comment="Done for today. Added better hit detection etc.&#10;&#10;Tomorrow planning on adding the intersectable list and improving the shading.">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include/RayTracer.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include/SceneObjects/IntersectableList.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SceneObjects/IntersectableList.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/image_result.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/image_result.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/Color.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Basics/Color.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/Ray.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Basics/Ray.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/Vec3.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Basics/Vec3.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/Basics/Intersectable.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SceneObjects/Intersectable.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SceneObjects/Sphere.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SceneObjects/Sphere.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Color.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Basics/Color.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ray.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Basics/Ray.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vec3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Basics/Vec3.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Basics/Intersectable.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/SceneObjects/Intersectable.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SceneObjects/Sphere.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/SceneObjects/Sphere.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +64,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectApplicationVersion">
     <option name="ide" value="CLion" />
@@ -109,18 +107,18 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.externalTools",
+    "settings.editor.selected.configurable": "preferences.sourceCode.C/C++",
     "structure.view.defaults.are.configured": "true",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Programming\C++\RayTracer\include" />
       <recent name="E:\Programming\C++\RayTracer\include\SceneObjects" />
+      <recent name="E:\Programming\C++\RayTracer\src\SceneObjects" />
       <recent name="E:\Programming\C++\RayTracer\src\Basics" />
       <recent name="E:\Programming\C++\RayTracer\include\Basics" />
-      <recent name="E:\Programming\C++\RayTracer\include" />
-      <recent name="E:\Programming\C++\RayTracer\src" />
     </key>
   </component>
   <component name="RunManager">
@@ -145,7 +143,7 @@
       <updated>1712956250582</updated>
       <workItem from="1712956252067" duration="1761000" />
       <workItem from="1713024886059" duration="359000" />
-      <workItem from="1713025254093" duration="14697000" />
+      <workItem from="1713025254093" duration="22219000" />
     </task>
     <task id="LOCAL-00001" summary="Starting up.">
       <option name="closed" value="true" />
@@ -179,7 +177,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713037850282</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Done for today. Added better hit detection etc.&#10;&#10;Tomorrow planning on adding the intersectable list and improving the shading.">
+      <option name="closed" value="true" />
+      <created>1713041177254</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1713041177254</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,7 +200,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Starting up." />
     <MESSAGE value="Added a sphere, rays and better hit detection." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a sphere, rays and better hit detection." />
+    <MESSAGE value="Done for today. Added better hit detection etc.&#10;&#10;Tomorrow planning on adding the intersectable list and improving the shading." />
+    <option name="LAST_COMMIT_MESSAGE" value="Done for today. Added better hit detection etc.&#10;&#10;Tomorrow planning on adding the intersectable list and improving the shading." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
