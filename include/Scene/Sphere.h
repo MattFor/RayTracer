@@ -6,16 +6,18 @@
 #define RAYTRACER_SPHERE_H
 
 
-#include "Intersectable.h"
+#include "IntersectableList.h"
 
 class Sphere : public Intersectable {
 public:
-    Sphere (const Vec3& center, double radius) : center(center), radius(fmax(0, radius)) {};
-    bool hit (const Ray&, Range, IntersectionInfo&) const override;
+    Sphere (const Vec3& center, double radius, std::shared_ptr <Material> mat) :
+		center(center), radius(std::fmax(0, radius)), mat(mat) {};
+	bool hit (const Ray&, Range, IntersectionInfo&) const override;
 
 private:
     Vec3 center;
     double radius;
+	std::shared_ptr <Material> mat;
 };
 
 

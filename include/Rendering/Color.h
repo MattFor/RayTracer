@@ -6,8 +6,8 @@
 #define RAYTRACER_COLOR_H
 
 
-#include "../Math/Vec3.h"
 #include "../Math/Range.h"
+#include "../Math/Vec3.h"
 
 class Color : public Vec3 {
 public:

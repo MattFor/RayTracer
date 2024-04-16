@@ -6,7 +6,7 @@
 #define RAYTRACER_RANGE_H
 
 
-#include "../RayTracer.h"
+#include <xmath.h>
 
 class Range {
 public:

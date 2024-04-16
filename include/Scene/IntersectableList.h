@@ -6,6 +6,8 @@
 #define RAYTRACER_INTERSECTABLELIST_H
 
 
+#include <vector>
+
 #include "../RayTracer.h"
 #include "Intersectable.h"
 
@@ -19,7 +21,7 @@ public:
 
 	std::vector <std::shared_ptr<Intersectable>> contents {};
 
-    void add (std::shared_ptr <Intersectable> intersectable);
+    void add    (std::shared_ptr <Intersectable> intersectable);
 	void remove (std::shared_ptr <Intersectable> intersectable);
 
 	bool hit (const Ray&, Range, IntersectionInfo&) const override;

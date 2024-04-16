@@ -34,10 +34,10 @@ bool Sphere::hit (const Ray& r, Range ray_s, IntersectionInfo& info) const
     double intersect_point = (H - dlt_sqrt) / A;
 
     // Find intersection point which lies within the acceptable range
-    if (ray_s.surrounds(intersect_point))
+    if (!ray_s.surrounds(intersect_point))
     {
         intersect_point = (H + dlt_sqrt) / A;
-        if (ray_s.surrounds(intersect_point))
+        if (!ray_s.surrounds(intersect_point))
         {
             return false;
         }
@@ -47,6 +47,7 @@ bool Sphere::hit (const Ray& r, Range ray_s, IntersectionInfo& info) const
     info.i_point = r.pos_at(intersect_point);
     info.norm = (info.i_point - center) / this->radius;
     info.get_normal_orientation(r, info.norm);
+	info.mat = this->mat;
 
     return true;
 }

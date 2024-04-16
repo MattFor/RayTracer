@@ -20,30 +20,26 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb0ad159-ae3b-4f91-8e2c-2b61f430589b" name="Changes" comment="Created SceneObject list.&#10;Added two spheres that are &#10;the colour of their normals.">
-      <change afterPath="$PROJECT_DIR$/include/Camera/Camera.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include/Math/Range.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Camera/Camera.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Math/Range.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Math/Vec3.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Rendering/Ray.cpp" afterDir="false" />
+    <list default="true" id="bb0ad159-ae3b-4f91-8e2c-2b61f430589b" name="Changes" comment="Some bugs have been introduced... fixing.">
+      <change afterPath="$PROJECT_DIR$/include/Rendering/Material.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Rendering/Material.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/image_result.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/image_result.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/Basics/Color.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Rendering/Color.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/Basics/Ray.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Rendering/Ray.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/Basics/Vec3.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Math/Vec3.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/Camera/Camera.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Camera/Camera.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/Math/Range.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Math/Range.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/Math/Vec3.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Math/Vec3.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/RayTracer.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/RayTracer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/SceneObjects/Intersectable.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/SceneObjects/IntersectableList.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Scene/IntersectableList.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/SceneObjects/Sphere.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Scene/Sphere.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/Rendering/Color.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Rendering/Color.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/Rendering/Ray.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Rendering/Ray.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/Scene/IntersectableList.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Scene/IntersectableList.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/Scene/Sphere.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Scene/Sphere.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Basics/Color.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Rendering/Color.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Basics/Ray.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Basics/Vec3.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SceneObjects/Intersectable.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scene/Intersectable.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SceneObjects/IntersectableList.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scene/IntersectableList.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SceneObjects/Sphere.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scene/Sphere.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Camera/Camera.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Camera/Camera.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Math/Vec3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Math/Vec3.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Rendering/Color.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Rendering/Color.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Scene/Sphere.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scene/Sphere.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,52 +87,47 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "CMake Application.RayTracer.executor": "Debug",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "javascript.nodejs.core.library.configured.version": "20.11.1",
-    "javascript.nodejs.core.library.typings.version": "20.11.30",
-    "last_opened_file_path": "C:/Program Files/XnViewMP/xnviewmp.exe",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "editor.preferences.completion",
-    "structure.view.defaults.are.configured": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;CMake Application.RayTracer.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;20.11.1&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;20.11.30&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Program Files/XnViewMP/xnviewmp.exe&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;,
+    &quot;structure.view.defaults.are.configured&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Programming\C++\RayTracer\include\Rendering" />
+      <recent name="E:\Programming\C++\RayTracer\src\Rendering" />
       <recent name="E:\Programming\C++\RayTracer\include\Scene" />
       <recent name="E:\Programming\C++\RayTracer\include" />
       <recent name="E:\Programming\C++\RayTracer\src\Camera" />
-      <recent name="E:\Programming\C++\RayTracer\include\Camera" />
-      <recent name="E:\Programming\C++\RayTracer\src\Math" />
     </key>
   </component>
   <component name="RunManager">
     <configuration name="RayTracer" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="RayTracer" TARGET_NAME="RayTracer" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="RayTracer" RUN_TARGET_NAME="RayTracer">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -155,7 +146,19 @@
       <workItem from="1713025254093" duration="24445000" />
       <workItem from="1713075405266" duration="417000" />
       <workItem from="1713076844677" duration="12417000" />
-      <workItem from="1713106643819" duration="1820000" />
+      <workItem from="1713106643819" duration="5292000" />
+      <workItem from="1713114984807" duration="41000" />
+      <workItem from="1713195767805" duration="17000" />
+      <workItem from="1713195792229" duration="1141000" />
+      <workItem from="1713198258987" duration="2900000" />
+      <workItem from="1713201201843" duration="281000" />
+      <workItem from="1713201492131" duration="369000" />
+      <workItem from="1713201872824" duration="4932000" />
+      <workItem from="1713247277513" duration="3877000" />
+      <workItem from="1713266806616" duration="5792000" />
+      <workItem from="1713282052081" duration="1645000" />
+      <workItem from="1713283726197" duration="8306000" />
+      <workItem from="1713302593066" duration="1761000" />
     </task>
     <task id="LOCAL-00001" summary="Starting up.">
       <option name="closed" value="true" />
@@ -205,7 +208,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713073250105</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Some bugs have been introduced... fixing.">
+      <option name="closed" value="true" />
+      <created>1713108700037</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1713108700037</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -245,7 +256,15 @@
     <MESSAGE value="Added a sphere, rays and better hit detection." />
     <MESSAGE value="Done for today. Added better hit detection etc.&#10;&#10;Tomorrow planning on adding the intersectable list and improving the shading." />
     <MESSAGE value="Created SceneObject list.&#10;Added two spheres that are &#10;the colour of their normals." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created SceneObject list.&#10;Added two spheres that are &#10;the colour of their normals." />
+    <MESSAGE value="Some bugs have been introduced... fixing." />
+    <option name="LAST_COMMIT_MESSAGE" value="Some bugs have been introduced... fixing." />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="CMakeRunConfiguration">
+        <watch expression="u" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
