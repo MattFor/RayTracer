@@ -18,6 +18,7 @@ public:
 	// Scene
 	void render (const Intersectable& scene);
 
+	// These settings are set in main.cpp (these are just examples)
 	// Image
 	int img_width = 1200;
 	double aspect_ratio = 16.0 / 9.0;
@@ -29,11 +30,11 @@ public:
 
 	// Camera
 	double vert_fov       = 20;
+	double focus_dist     = 10;                       // Dist from cam_origin to best plane focus point
+	double defocus_ang    = 0.6;                      // Variation angle of rays through each pixel
+	Vec3 v_up             = Vec3 (0, 1, 0);     // Camera's relative "up" direction
 	Vec3 cam_origin       = Vec3 (13, 2, 3);
 	Vec3 cam_facing_point = Vec3 (0, 0, 0);
-	Vec3 v_up             = Vec3 (0, 1, 0);     // Camera's relative "up" direction
-	double defocus_ang    = 0.6;                           // Variation angle of rays through each pixel
-	double focus_dist     = 10;                            // Dist from cam_origin to best plane focus point
 
 	void init ();
 
