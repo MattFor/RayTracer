@@ -46,7 +46,7 @@ bool Sphere::hit (const Ray& r, Range ray_s, IntersectionInfo& info) const
     info.s = intersect_point;
     info.i_point = r.pos_at(intersect_point);
     info.norm = (info.i_point - center) / this->radius;
-    info.get_normal_orientation(r, info.norm);
+    info.set_normal_orientation(r, info.norm);
 	info.mat = this->mat;
 
     return true;

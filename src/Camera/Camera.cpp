@@ -43,7 +43,15 @@ void Camera::render (const Intersectable& scene)
 
 void Camera::init ()
 {
+	this->img_height        =       (int) (this->img_width / this->aspect_ratio);
 	this->img_height        =       (this->img_height < 1) ? 1 : this->img_height;
+
+	this->cam_center        =       this->cam_origin;
+	this->pix_samp_scale    =       1.0 / this->samp_per_pix;
+
+	this->w                 =       unit_vec     (this->cam_origin - this->cam_facing_point);
+	this->u                 =       unit_vec     (cross_prod(this->v_up, this->w));
+	this->v                 =       cross_prod   (this->w, this->u);
 
 	double theta            =       deg_to_rad(this->vert_fov);
 	double h                =       std::tan(theta / 2);

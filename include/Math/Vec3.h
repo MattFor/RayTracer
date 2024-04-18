@@ -161,12 +161,7 @@ inline Vec3 rand_on_hemisphere (const Vec3& norm)
 {
 	Vec3 on_unit_sphere = rand_unit_on_hemisphere();
 
-	if (dot_prod(on_unit_sphere, norm) > 0.0)
-	{
-		return on_unit_sphere;
-	}
-
-	return -on_unit_sphere;
+	return dot_prod(on_unit_sphere, norm) > 0.0 ? on_unit_sphere : -on_unit_sphere;
 }
 
 inline Vec3 smooth_reflect (const Vec3& u, const Vec3& v)

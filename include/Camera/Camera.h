@@ -20,42 +20,40 @@ public:
 
 	// These settings are set in main.cpp (these are just examples)
 	// Image
-	int img_width = 1200;
-	double aspect_ratio = 16.0 / 9.0;
+	int img_width         = 100;
+	double aspect_ratio   = 1.0;
 
 	// Rendering
 	// Antialiasing sampling
-	int max_ray_depth = 30;
-	int samp_per_pix  = 20;
+	int max_ray_depth     = 10;
+	int samp_per_pix      = 10;
 
 	// Camera
-	double vert_fov       = 20;
-	double focus_dist     = 10;                       // Dist from cam_origin to best plane focus point
-	double defocus_ang    = 0.6;                      // Variation angle of rays through each pixel
+	double vert_fov       = 90;
+	double focus_dist     = 10;                        // Dist from cam_origin to best plane focus point
+	double defocus_ang    = 0;                      // Variation angle of rays through each pixel
 	Vec3 v_up             = Vec3 (0, 1, 0);     // Camera's relative "up" direction
-	Vec3 cam_origin       = Vec3 (13, 2, 3);
-	Vec3 cam_facing_point = Vec3 (0, 0, 0);
+	Vec3 cam_origin       = Vec3 (0, 0, 0);
+	Vec3 cam_facing_point = Vec3 (0, 0, -1);
 
 	void init ();
 
 private:
 	// Image
-	int img_height = (int) (this->img_width / this->aspect_ratio);
+	int img_height;
 
 	// Rendering
-	const double pix_samp_scale = 1.0 / this->samp_per_pix;
+	double pix_samp_scale = 1.0 / this->samp_per_pix;
 
 	// Scene
-	const Vec3 cam_center = this->cam_origin;
+	Vec3 cam_center = this->cam_origin;
 
+	Vec3 u, v, w;
 	Vec3 pix_dlt_u;
 	Vec3 pix_dlt_v;
 	Vec3 pix_sp_loc;
 	Vec3 defocus_disk_u;
 	Vec3 defocus_disk_v;
-	const Vec3 w = unit_vec     (this->cam_origin - this->cam_facing_point);
-	const Vec3 u = unit_vec     (cross_prod(this->v_up, this->w));
-	const Vec3 v = cross_prod   (this->w, this->u);
 
 	// Returns the vector to a random point in the [-0.5, -0.5] - [+0.5, +0.5] unit square.
 	Vec3 samp_square () const;

@@ -4,12 +4,12 @@
 
 #include "../../include/Rendering/Material.h"
 
-bool Material::scatter_light(const Ray& r_in, const IntersectionInfo&, Color& attenuation, Ray& scattered) const
+bool Material::scatter_light (const Ray& r_in, const IntersectionInfo&, Color& attenuation, Ray& scattered) const
 {
 	return false;
 }
 
-bool Lambertian::scatter_light(const Ray& r_in, const IntersectionInfo& info, Color& attenuation, Ray& scattered) const
+bool Lambertian::scatter_light (const Ray& r_in, const IntersectionInfo& info, Color& attenuation, Ray& scattered) const
 {
 	Vec3 scatter_dir = info.norm + rand_unit_on_hemisphere();
 
@@ -23,17 +23,17 @@ bool Lambertian::scatter_light(const Ray& r_in, const IntersectionInfo& info, Co
 	return true;
 }
 
-bool Metal::scatter_light(const Ray& r_in, const IntersectionInfo& info, Color& attenuation, Ray& scattered) const
+bool Metal::scatter_light (const Ray& r_in, const IntersectionInfo& info, Color& attenuation, Ray& scattered) const
 {
 	Vec3 reflection = smooth_reflect(r_in.direction(), info.norm);
-	reflection = unit_vec(reflection) + (rand_unit_on_hemisphere() * fuzz);
+	reflection      = unit_vec(reflection) + (rand_unit_on_hemisphere() * fuzz);
 	// No need to check if its near zero since it will always deflect according to the linear formula
 	scattered = Ray(info.i_point, reflection);
 	attenuation = this->albedo;
-	return true;
+	return dot_prod(scattered.direction(), info.norm) > 0;
 }
 
-bool Dielectric::scatter_light(const Ray& r_in, const IntersectionInfo& info, Color& attenuation, Ray& scattered) const
+bool Dielectric::scatter_light (const Ray& r_in, const IntersectionInfo& info, Color& attenuation, Ray& scattered) const
 {
 	attenuation = Color(1.0, 1.0, 1.0);
 	double c_refr_index = info.orientation ? (1.0 / this->refr_index) : this->refr_index;
@@ -52,9 +52,9 @@ bool Dielectric::scatter_light(const Ray& r_in, const IntersectionInfo& info, Co
 	return true;
 }
 
-double Dielectric::reflectance(double cos, double refr_index)
+double Dielectric::reflectance (double cos, double refr_index)
 {
 	double r0 = (1 - refr_index) / (1 + refr_index);
 	r0 = r0*r0;
-	return r0 + (1 - r0) * std::pow((1 - cos), 5);
+	return std::pow(1 - cos, 5) * (1 - r0) + r0;
 }

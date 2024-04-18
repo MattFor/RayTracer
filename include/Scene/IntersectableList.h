@@ -19,8 +19,9 @@ public:
         this->add(intersectable);
     };
 
-	std::vector <std::shared_ptr<Intersectable>> contents {};
+	std::vector <std::shared_ptr <Intersectable>> contents {};
 
+	void clear  ();
     void add    (std::shared_ptr <Intersectable> intersectable);
 	void remove (std::shared_ptr <Intersectable> intersectable);
 
