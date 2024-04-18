@@ -20,18 +20,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb0ad159-ae3b-4f91-8e2c-2b61f430589b" name="Changes" comment="fixes">
+    <list default="true" id="bb0ad159-ae3b-4f91-8e2c-2b61f430589b" name="Changes" comment="final with bugs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image_result.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/image_result.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/Camera/Camera.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Camera/Camera.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/Math/Vec3.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Math/Vec3.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/Scene/IntersectableList.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Scene/IntersectableList.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Camera/Camera.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Camera/Camera.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Rendering/Material.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Rendering/Material.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Scene/Intersectable.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scene/Intersectable.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Scene/IntersectableList.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scene/IntersectableList.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Scene/Sphere.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scene/Sphere.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +146,7 @@
       <workItem from="1713302593066" duration="5593000" />
       <workItem from="1713345797917" duration="6089000" />
       <workItem from="1713450923962" duration="18000" />
-      <workItem from="1713450949422" duration="3617000" />
+      <workItem from="1713450949422" duration="4407000" />
     </task>
     <task id="LOCAL-00001" summary="Starting up.">
       <option name="closed" value="true" />
@@ -238,7 +228,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713305053251</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="final with bugs">
+      <option name="closed" value="true" />
+      <created>1713468422547</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1713468422547</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,7 +279,8 @@
     <MESSAGE value="Some bugs have been introduced... fixing." />
     <MESSAGE value="Fixed every bug except the fact the scene's all weird... working on it.&#10;Added lots of stuff!" />
     <MESSAGE value="fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixes" />
+    <MESSAGE value="final with bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="final with bugs" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
