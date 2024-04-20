@@ -9,7 +9,7 @@ bool Sphere::hit (const Ray& r, Range ray_s, IntersectionInfo& info) const
     Vec3 origin_to_center = this->center - r.origin();
 
     double A = r.direction().len_squared();
-    // OLD: double B = dot_prod(r.direction(), origin_to_center) * -2.0;
+    // OLD: double B = dot_prod(r.direction(), origin_to_center) * -2;
     double H = dot_prod(r.direction(), origin_to_center);
     double C = origin_to_center.len_squared() - radius*radius;
 
@@ -25,12 +25,12 @@ bool Sphere::hit (const Ray& r, Range ray_s, IntersectionInfo& info) const
     // Currently moved from main.cpp due to better Intersectable management.
     double dlt = H*H - A*C;
 
-    if (dlt < 0)
+    if (dlt < 0.0)
     {
         return false;
     }
 
-    double dlt_sqrt = sqrt(dlt);
+    double dlt_sqrt = std::sqrt(dlt);
     double intersect_point = (H - dlt_sqrt) / A;
 
     // Find intersection point which lies within the acceptable range
@@ -44,9 +44,9 @@ bool Sphere::hit (const Ray& r, Range ray_s, IntersectionInfo& info) const
     }
 
     info.s = intersect_point;
-    info.i_point = r.pos_at(intersect_point);
-    info.norm = (info.i_point - center) / this->radius;
-    info.set_normal_orientation(r, info.norm);
+    info.i_point = r.pos_at(info.s);
+	Vec3 outward_norm = (info.i_point - this->center) / this->radius;
+    info.set_normal_orientation(r, outward_norm);
 	info.mat = this->mat;
 
     return true;

@@ -20,7 +20,7 @@ public:
 	Vec3 norm;
 	Vec3 i_point;
 	double s = 0.0;
-	double orientation;
+	bool orientation;
 
 	std::shared_ptr <Material> mat;
 
@@ -32,7 +32,7 @@ public:
 class Intersectable {
 public:
 	virtual ~Intersectable () = default;
-	virtual bool hit (const Ray&, Range, IntersectionInfo&) const = 0;
+	virtual bool hit (const Ray&, Range, IntersectionInfo&) const;
 };
 
 

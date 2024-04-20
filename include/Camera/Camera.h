@@ -20,21 +20,22 @@ public:
 
 	// These settings are set in main.cpp (these are just examples)
 	// Image
-	int img_width         = 100;
-	double aspect_ratio   = 1.0;
+	int img_width;
+	double aspect_ratio;
 
 	// Rendering
 	// Antialiasing sampling
-	int max_ray_depth     = 10;
-	int samp_per_pix      = 10;
+	int samp_per_pix;
+	int max_ray_depth;
 
 	// Camera
-	double vert_fov       = 90;
-	double focus_dist     = 10;                        // Dist from cam_origin to best plane focus point
-	double defocus_ang    = 0;                      // Variation angle of rays through each pixel
-	Vec3 v_up             = Vec3 (0, 1, 0);     // Camera's relative "up" direction
-	Vec3 cam_origin       = Vec3 (0, 0, 0);
-	Vec3 cam_facing_point = Vec3 (0, 0, -1);
+	double vert_fov;        // Vertical viewing angle (i.e. field of view)
+	double focus_dist;      // Dist from cam_origin to best plane focus point
+	double defocus_ang;     // Variation angle of rays through each pixel
+
+	Vec3 v_up;              // Camera's relative "up" direction
+	Vec3 cam_origin;
+	Vec3 cam_facing_point;
 
 	void init ();
 
@@ -43,17 +44,14 @@ private:
 	int img_height;
 
 	// Rendering
-	double pix_samp_scale = 1.0 / this->samp_per_pix;
+	double pix_samp_scale;
 
 	// Scene
-	Vec3 cam_center = this->cam_origin;
-
 	Vec3 u, v, w;
-	Vec3 pix_dlt_u;
-	Vec3 pix_dlt_v;
+	Vec3 cam_center;
 	Vec3 pix_sp_loc;
-	Vec3 defocus_disk_u;
-	Vec3 defocus_disk_v;
+	Vec3 pix_dlt_u, pix_dlt_v;
+	Vec3 defocus_disk_u, defocus_disk_v;
 
 	// Returns the vector to a random point in the [-0.5, -0.5] - [+0.5, +0.5] unit square.
 	Vec3 samp_square () const;

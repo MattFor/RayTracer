@@ -26,11 +26,11 @@ bool Lambertian::scatter_light (const Ray& r_in, const IntersectionInfo& info, C
 bool Metal::scatter_light (const Ray& r_in, const IntersectionInfo& info, Color& attenuation, Ray& scattered) const
 {
 	Vec3 reflection = smooth_reflect(r_in.direction(), info.norm);
-	reflection      = unit_vec(reflection) + (rand_unit_on_hemisphere() * fuzz);
+	reflection      = unit_vec(reflection) + (this->fuzz * rand_unit_on_hemisphere());
 	// No need to check if its near zero since it will always deflect according to the linear formula
-	scattered = Ray(info.i_point, reflection);
-	attenuation = this->albedo;
-	return dot_prod(scattered.direction(), info.norm) > 0;
+	scattered       = Ray(info.i_point, reflection);
+	attenuation     = this->albedo;
+	return dot_prod(scattered.direction(), info.norm) > 0.0;
 }
 
 bool Dielectric::scatter_light (const Ray& r_in, const IntersectionInfo& info, Color& attenuation, Ray& scattered) const
@@ -39,7 +39,7 @@ bool Dielectric::scatter_light (const Ray& r_in, const IntersectionInfo& info, C
 	double c_refr_index = info.orientation ? (1.0 / this->refr_index) : this->refr_index;
 
 	Vec3 unit_dir = unit_vec(r_in.direction());
-	double cos_theta = std::fmin(dot_prod(-unit_dir, info.norm), 1.0);
+	double cos_theta = std::fmin(dot_prod(-unit_dir, info.norm), 1);
 	double sin_theta = std::sqrt(1.0 - cos_theta*cos_theta);
 
 	bool uncorrectable = c_refr_index * sin_theta > 1.0;
@@ -54,7 +54,7 @@ bool Dielectric::scatter_light (const Ray& r_in, const IntersectionInfo& info, C
 
 double Dielectric::reflectance (double cos, double refr_index)
 {
-	double r0 = (1 - refr_index) / (1 + refr_index);
+	double r0 = (1.0 - refr_index) / (1.0 + refr_index);
 	r0 = r0*r0;
-	return std::pow(1 - cos, 5) * (1 - r0) + r0;
+	return std::pow(1.0 - cos, 5.0) * (1.0 - r0) + r0;
 }

@@ -6,7 +6,7 @@
 
 const Vec3& Ray::origin () const
 {
-	return this->_original;
+	return this->_origin;
 }
 
 const Vec3& Ray::direction () const
@@ -16,5 +16,5 @@ const Vec3& Ray::direction () const
 
 Vec3 Ray::pos_at (double s) const
 {
-	return this->_original + s * this->_direction;
+	return this->_origin + s * this->_direction;
 }

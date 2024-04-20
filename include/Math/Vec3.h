@@ -74,7 +74,7 @@ public:
 
     Vec3& operator /= (double s)
     {
-        return *this *= 1/s;
+        return *this *= 1.0/s;
     };
 
 	bool near_zero () const;
@@ -118,7 +118,7 @@ inline Vec3 operator * (const Vec3& v, double s)
 
 inline Vec3 operator / (const Vec3& v, double s)
 {
-    return (1 / s) * v;
+    return (1.0 / s) * v;
 }
 
 inline double dot_prod (const Vec3& u, const Vec3& v)
@@ -144,8 +144,8 @@ inline Vec3 rand_in_unit_sphere ()
 {
 	while (true)
 	{
-		Vec3 v = Vec3::rand(-1, 1);
-		if (v.len_squared() < 1)
+		Vec3 v = Vec3::rand(-1.0, 1.0);
+		if (v.len_squared() < 1.0)
 		{
 			return v;
 		}
@@ -157,10 +157,9 @@ inline Vec3 rand_unit_on_hemisphere ()
 	return unit_vec(rand_in_unit_sphere());
 }
 
-inline Vec3 rand_on_hemisphere (const Vec3& norm)
+[[maybe_unused]] inline Vec3 rand_on_hemisphere (const Vec3& norm)
 {
 	Vec3 on_unit_sphere = rand_unit_on_hemisphere();
-
 	return dot_prod(on_unit_sphere, norm) > 0.0 ? on_unit_sphere : -on_unit_sphere;
 }
 
@@ -174,7 +173,7 @@ inline Vec3 smooth_reflect (const Vec3& u, const Vec3& v)
 	 * (If n were not a unit vector, we would also need to divide this dot project by the length of n.)
 	 * Finally, because v points into the surface, and we want b to point out of the surface, we need to negate this projection length.
 	 */
-	return u - 2 * dot_prod(u, v) * v;
+	return u - 2.0 * dot_prod(u, v) * v;
 }
 
 inline Vec3 refract (const Vec3& uv, const Vec3 norm, double refr_index_ratio)
@@ -218,7 +217,7 @@ inline Vec3 refract (const Vec3& uv, const Vec3 norm, double refr_index_ratio)
 	 *	Which finally brings us to this function:
 	 */
 
-	double cos_theta    = std::fmin(dot_prod(-uv, norm), 1.0);
+	double cos_theta    = std::fmin(dot_prod(-uv, norm), 1);
 	Vec3 r_out_perp     = refr_index_ratio * (uv + cos_theta * norm);
 	Vec3 parallel_comp  = -std::sqrt(std::fabs(1.0 - r_out_perp.len_squared())) * norm;
 	return r_out_perp + parallel_comp;
@@ -228,7 +227,7 @@ inline Vec3 rand_in_unit_disk ()
 {
 	while (true)
 	{
-		Vec3 point = Vec3 (rand_double(-1, 1), rand_double(-1, 1), 0);
+		Vec3 point = Vec3 (rand_double(-1, 1), rand_double(-1.0, 1.0), 0.0);
 		if (point.len_squared() < 1.0)
 		{
 			return point;

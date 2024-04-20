@@ -4,8 +4,13 @@
 
 #include "../../include/Scene/Intersectable.h"
 
+bool Intersectable::hit(const Ray&, Range, IntersectionInfo&) const
+{
+	return false;
+}
+
 void IntersectionInfo::set_normal_orientation (const Ray& r, const Vec3& normal)
 {
-	this->orientation = dot_prod(r.direction(), normal) < 0;
+	this->orientation = dot_prod(r.direction(), normal) < 0.0;
     this->norm = this->orientation ? normal : -normal;
 }

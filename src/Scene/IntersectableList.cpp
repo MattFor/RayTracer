@@ -6,7 +6,7 @@
 
 #include "../../include/Scene/IntersectableList.h"
 
-void IntersectableList::clear()
+void IntersectableList::clear ()
 {
 	this->contents.clear();
 }
@@ -33,8 +33,8 @@ void IntersectableList::remove (std::shared_ptr<Intersectable> intersectable)
 bool IntersectableList::hit (const Ray& r, Range ray_s, IntersectionInfo &info) const
 {
 	IntersectionInfo temp_info;
-
 	double closest = ray_s.max;
+	bool intersection_detected = false;
 
 	for (const std::shared_ptr <Intersectable>& intersectable : this->contents)
 	{
@@ -42,10 +42,9 @@ bool IntersectableList::hit (const Ray& r, Range ray_s, IntersectionInfo &info) 
 		{
 			info = temp_info;
 			closest = temp_info.s;
-
-			return true;
+			intersection_detected = true;
 		}
 	}
 
-	return false;
+	return intersection_detected;
 }

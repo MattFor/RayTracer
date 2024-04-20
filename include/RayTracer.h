@@ -19,7 +19,7 @@ const double PI = 3.1415926535897932384626433832795028841971;
 // {
 // 	// Modern c++ is great
 // 	static std::mt19937 generator;
-// 	static std::uniform_real_distribution <double> distribution (0.0, 1.0);
+// 	static std::uniform_real_distribution <double> distribution (0, 1);
 // 	return distribution (generator);
 // }
 //
@@ -31,7 +31,7 @@ const double PI = 3.1415926535897932384626433832795028841971;
 
 inline double deg_to_rad (double deg)
 {
-	return deg * (PI / 180);
+	return deg * (PI / 180.0);
 }
 
 
