@@ -12,7 +12,8 @@
 class Color : public Vec3 {
 public:
     using Vec3::Vec3;
-    Color (Vec3 v)
+
+	[[maybe_unused]] Color (Vec3 v)
     {
         this->x = v.x;
         this->y = v.y;

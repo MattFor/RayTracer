@@ -16,7 +16,7 @@ inline double linear_to_gamma (double linear_component)
 
 void Color::display (std::ostream& out, const Color& point_rgb)
 {
-	static const Range intensity (0.0, 0.999);
+	static const Range intensity (0.000, 0.999);
 
 	// Before clamping apply gamma correction so that image viewers correctly recognize the image
 	// Now we clamp the result, so it stays within the 0, 255 range.

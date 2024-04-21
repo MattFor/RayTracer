@@ -37,8 +37,6 @@ public:
 	Vec3 cam_origin;
 	Vec3 cam_facing_point;
 
-	void init ();
-
 private:
 	// Image
 	int img_height;
@@ -52,6 +50,8 @@ private:
 	Vec3 pix_sp_loc;
 	Vec3 pix_dlt_u, pix_dlt_v;
 	Vec3 defocus_disk_u, defocus_disk_v;
+
+	void init ();
 
 	// Returns the vector to a random point in the [-0.5, -0.5] - [+0.5, +0.5] unit square.
 	Vec3 samp_square () const;

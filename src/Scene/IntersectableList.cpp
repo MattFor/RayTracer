@@ -6,7 +6,7 @@
 
 #include "../../include/Scene/IntersectableList.h"
 
-void IntersectableList::clear ()
+[[maybe_unused]] void IntersectableList::clear ()
 {
 	this->contents.clear();
 }
@@ -16,7 +16,7 @@ void IntersectableList::add (std::shared_ptr <Intersectable> intersectable)
     this->contents.push_back(intersectable);
 }
 
-void IntersectableList::remove (std::shared_ptr<Intersectable> intersectable)
+[[maybe_unused]] void IntersectableList::remove (std::shared_ptr<Intersectable> intersectable)
 {
 	this->contents.erase(
 			std::remove_if (

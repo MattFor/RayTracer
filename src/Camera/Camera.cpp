@@ -7,6 +7,8 @@
 // Public
 void Camera::render (const Intersectable& scene)
 {
+	this->init();
+
 	// Renderer
 	std::cout << "P3\n" << this->img_width << ' ' << this->img_height << "\n255\n";
 
@@ -93,7 +95,7 @@ Ray Camera::get_ray (const int height, const int width) const
 
 	Vec3 pix_samp = this->pix_sp_loc                         +
 			(((double) height + offset.y) * this->pix_dlt_v) +
-			(((double) width +  offset.x) * this->pix_dlt_u);
+			(((double) width +  offset.y) * this->pix_dlt_u);
 
 	Vec3 ray_origin = this->defocus_ang <= 0.0 ? this->cam_center : this->defocus_disk_samp();
 	Vec3 ray_direction = pix_samp - ray_origin;
@@ -109,7 +111,7 @@ Color Camera::ray_clr (const Ray& r, int depth, const Intersectable& scene) cons
 	IntersectionInfo info;
 
 	// Added 0.001 instead of 0 to guard against floating point imprecision
-	if (scene.hit(r, Range(0.0001, INF), info))
+	if (scene.hit(r, Range(0.0001, infinity), info))
 	{
 		// OLD^2:
 		// return (info.norm + Color(1, 1, 1)) * 0.5;

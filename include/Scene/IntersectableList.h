@@ -21,9 +21,10 @@ public:
 
 	std::vector <std::shared_ptr <Intersectable>> contents {};
 
-	void clear  ();
-    void add    (std::shared_ptr <Intersectable> intersectable);
-	void remove (std::shared_ptr <Intersectable> intersectable);
+	[[maybe_unused]] void clear  ();
+	[[maybe_unused]] void remove (std::shared_ptr <Intersectable> intersectable);
+
+	void add    (std::shared_ptr <Intersectable> intersectable);
 
 	bool hit (const Ray&, Range, IntersectionInfo&) const override;
 };

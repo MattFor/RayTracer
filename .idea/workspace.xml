@@ -21,20 +21,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb0ad159-ae3b-4f91-8e2c-2b61f430589b" name="Changes" comment="final with bugs">
+      <change afterPath="$PROJECT_DIR$/image_result_result.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/image_result.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/image_result.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image_result1.ppm" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/include/Camera/Camera.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Camera/Camera.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/Math/Range.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Math/Range.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/Math/Vec3.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Math/Vec3.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/RayTracer.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/RayTracer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/Rendering/Ray.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Rendering/Ray.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/Rendering/Color.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Rendering/Color.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/Scene/Intersectable.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Scene/Intersectable.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/Scene/Sphere.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Scene/Sphere.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/Scene/IntersectableList.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Scene/IntersectableList.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Camera/Camera.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Camera/Camera.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Math/Range.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Math/Range.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Rendering/Color.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Rendering/Color.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Rendering/Material.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Rendering/Material.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Rendering/Ray.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Rendering/Ray.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Scene/Intersectable.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scene/Intersectable.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Scene/IntersectableList.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scene/IntersectableList.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Scene/Sphere.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scene/Sphere.cpp" afterDir="false" />
@@ -50,6 +52,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -85,36 +88,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;CMake Application.RayTracer.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;20.11.1&quot;,
-    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;20.11.30&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/Programming/C++/RayTracer&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.C/C++&quot;,
-    &quot;structure.view.defaults.are.configured&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "CMake Application.RayTracer.executor": "Debug",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "javascript.nodejs.core.library.configured.version": "20.11.1",
+    "javascript.nodejs.core.library.typings.version": "20.11.30",
+    "last_opened_file_path": "E:/Programming/C++/raytracing.github.io/src/InOneWeekend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.rainbow.brackets.disable.when",
+    "structure.view.defaults.are.configured": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Programming\C++\RayTracer" />
@@ -169,6 +172,7 @@
       <workItem from="1713632541553" duration="61000" />
       <workItem from="1713632624440" duration="7896000" />
       <workItem from="1713641378590" duration="3497000" />
+      <workItem from="1713713585269" duration="8649000" />
     </task>
     <task id="LOCAL-00001" summary="Starting up.">
       <option name="closed" value="true" />

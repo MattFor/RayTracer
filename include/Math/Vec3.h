@@ -11,6 +11,8 @@
 #include <ostream>
 
 
+const double infinity = std::numeric_limits <double> ::infinity();
+
 inline double rand_double ()
 {
 	// Modern c++ is great
@@ -163,7 +165,7 @@ inline Vec3 rand_unit_on_hemisphere ()
 	return dot_prod(on_unit_sphere, norm) > 0.0 ? on_unit_sphere : -on_unit_sphere;
 }
 
-inline Vec3 smooth_reflect (const Vec3& u, const Vec3& v)
+inline Vec3 reflect (const Vec3& u, const Vec3& v)
 {
 	/**
 	 * -- Excerpt directly from the guide --

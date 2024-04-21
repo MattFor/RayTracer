@@ -4,15 +4,12 @@
 
 #include "../../include/Math/Range.h"
 
-const Range Range::full = Range (-INF, +INF);
-const Range Range::empty = Range (+INF, -INF);
-
-double Range::size () const
+[[maybe_unused]] double Range::size  () const
 {
 	return this->max - this->min;
 }
 
-double Range::has (double x) const
+[[maybe_unused]] double Range::has   (double x) const
 {
 	return this->min <= x && x <= this->max;
 }

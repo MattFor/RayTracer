@@ -6,7 +6,7 @@
 #define RAYTRACER_INTERSECTABLE_H
 
 
-#include <bits/shared_ptr.h>
+#include <memory>
 
 #include "../Math/Range.h"
 #include "../Rendering/Ray.h"
@@ -26,7 +26,7 @@ public:
 
 	// Determine whether a normal is facing inwards or outwards from a face
 	// Normal here is assumed to have unit length
-	void set_normal_orientation (const Ray&, const Vec3&);
+	void set_norm_orientation (const Ray&, const Vec3&);
 };
 
 class Intersectable {

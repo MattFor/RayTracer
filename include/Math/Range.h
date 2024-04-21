@@ -16,13 +16,11 @@ public:
 	double min;
 	double max;
 
-	double size () const;
-	double has (double) const;
+	[[maybe_unused]] double size () const;
+	[[maybe_unused]] double has (double) const;
+
 	double clamp (double) const;
 	double surrounds (double) const;
-
-	static const Range full;
-	static const Range empty;
 };
 
 

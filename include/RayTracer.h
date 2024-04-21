@@ -31,7 +31,7 @@ const double PI = 3.1415926535897932384626433832795028841971;
 
 inline double deg_to_rad (double deg)
 {
-	return deg * (PI / 180.0);
+	return deg * PI / 180.0;
 }
 
 

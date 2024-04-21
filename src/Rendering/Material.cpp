@@ -25,7 +25,7 @@ bool Lambertian::scatter_light (const Ray& r_in, const IntersectionInfo& info, C
 
 bool Metal::scatter_light (const Ray& r_in, const IntersectionInfo& info, Color& attenuation, Ray& scattered) const
 {
-	Vec3 reflection = smooth_reflect(r_in.direction(), info.norm);
+	Vec3 reflection = reflect(r_in.direction(), info.norm);
 	reflection      = unit_vec(reflection) + (this->fuzz * rand_unit_on_hemisphere());
 	// No need to check if its near zero since it will always deflect according to the linear formula
 	scattered       = Ray(info.i_point, reflection);
@@ -45,8 +45,8 @@ bool Dielectric::scatter_light (const Ray& r_in, const IntersectionInfo& info, C
 	bool uncorrectable = c_refr_index * sin_theta > 1.0;
 
 	Vec3 dir = uncorrectable || this->reflectance(cos_theta, c_refr_index) > rand_double() ?
-			smooth_reflect(unit_dir, info.norm) :
-		    refract(unit_dir, info.norm, c_refr_index);
+	           reflect(unit_dir, info.norm) :
+	           refract(unit_dir, info.norm, c_refr_index);
 
 	scattered = Ray(info.i_point, dir);
 	return true;
