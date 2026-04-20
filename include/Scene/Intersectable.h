@@ -8,31 +8,36 @@
 
 #include <memory>
 
+#include "../Camera/AABB.h"
 #include "../Math/Range.h"
 #include "../Rendering/Ray.h"
+#include "../Rendering/Color.h"
 
 // Predefine to prevent circular reference
 class Material;
 
 // Used to note down where rays intersected with an intersectable thing
-class IntersectionInfo {
+class IntersectionInfo
+{
 public:
-	Vec3 norm;
-	Vec3 i_point;
-	double s = 0.0;
-	bool orientation;
+    Vec3   norm;
+    Vec3   i_point;
+    double s = 0.0;
+    bool   orientation;
 
-	std::shared_ptr <Material> mat;
+    std::shared_ptr <Material> mat;
 
-	// Determine whether a normal is facing inwards or outwards from a face
-	// Normal here is assumed to have unit length
-	void set_norm_orientation (const Ray&, const Vec3&);
+    // Determine whether a normal is facing inwards or outwards from a face
+    // Normal here is assumed to have unit length
+    void set_norm_orientation (const Ray&, const Vec3&);
 };
 
-class Intersectable {
+class Intersectable
+{
 public:
-	virtual ~Intersectable () = default;
-	virtual bool hit (const Ray&, Range, IntersectionInfo&) const;
+    virtual      ~Intersectable () = default;
+    virtual AABB bounding_box() const = 0;
+    virtual bool hit (const Ray&, Range, IntersectionInfo&) const;
 };
 
 

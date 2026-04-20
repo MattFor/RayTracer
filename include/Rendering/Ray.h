@@ -16,18 +16,21 @@
 
 #include "../Math/Vec3.h"
 
-class Ray {
+class Ray
+{
 public:
     Ray () = default;
-    Ray (const Vec3& origin, const Vec3& direction) : _origin(origin), _direction(direction) {};
 
-    [[nodiscard]] const Vec3& origin    ()  const;
-    [[nodiscard]] const Vec3& direction ()  const;
+    Ray (const Vec3& origin, const Vec3& direction) : _origin ( origin ),
+                                                      _direction ( direction ) {};
 
-	[[nodiscard]] Vec3 pos_at   (double s)  const;
+    [[nodiscard]] const Vec3& origin () const;
+    [[nodiscard]] const Vec3& direction () const;
+
+    [[nodiscard]] Vec3 pos_at (double s) const;
 
 private:
-	Vec3 _origin;
+    Vec3 _origin;
     Vec3 _direction;
 };
 

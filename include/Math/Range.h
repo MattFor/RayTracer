@@ -6,21 +6,25 @@
 #define RAYTRACER_RANGE_H
 
 
-#include <xmath.h>
+#include <limits>
 
-class Range {
+class Range
+{
 public:
-	Range () : min(+INF), max(-INF) {};
-	Range (double min, double max) : min(min), max(max) {};
+    Range () : min ( +std::numeric_limits <double>::infinity () ),
+               max ( -std::numeric_limits <double>::infinity () ) {};
 
-	double min;
-	double max;
+    Range (const double min, const double max) : min ( min ),
+                                                 max ( max ) {};
 
-	[[maybe_unused]] double size () const;
-	[[maybe_unused]] double has (double) const;
+    double min;
+    double max;
 
-	double clamp (double) const;
-	double surrounds (double) const;
+    [[maybe_unused]] double size () const;
+    [[maybe_unused]] double has (double) const;
+
+    double clamp (double) const;
+    double surrounds (double) const;
 };
 
 

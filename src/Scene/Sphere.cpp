@@ -6,12 +6,12 @@
 
 bool Sphere::hit (const Ray& r, Range ray_s, IntersectionInfo& info) const
 {
-    Vec3 origin_to_center = this->center - r.origin();
+    const Vec3 origin_to_center = this->center - r.origin ();
 
-    double A = r.direction().len_squared();
+    const double A = r.direction ().len_squared ();
     // OLD: double B = dot_prod(r.direction(), origin_to_center) * -2;
-    double H = dot_prod(r.direction(), origin_to_center);
-    double C = origin_to_center.len_squared() - radius*radius;
+    const double H = dot_prod ( r.direction (), origin_to_center );
+    const double C = origin_to_center.len_squared () - radius * radius;
 
     // Δ > 0 - 2 intersection points
     // Δ == 0 - 1 intersection point
@@ -23,31 +23,37 @@ bool Sphere::hit (const Ray& r, Range ray_s, IntersectionInfo& info) const
     // - the equation simplifies if "-2H" is substituted for "B"
     //
     // Currently moved from main.cpp due to better Intersectable management.
-    double dlt = H*H - A*C;
+    const double dlt = H * H - A * C;
 
-    if (dlt < 0.0)
+    if ( dlt < 0.0 )
     {
         return false;
     }
 
-    double dlt_sqrt = std::sqrt(dlt);
-    double intersect_point = (H - dlt_sqrt) / A;
+    const double dlt_sqrt        = std::sqrt ( dlt );
+    double       intersect_point = ( H - dlt_sqrt ) / A;
 
     // Find intersection point which lies within the acceptable range
-    if (!ray_s.surrounds(intersect_point))
+    if ( !ray_s.surrounds ( intersect_point ) )
     {
-        intersect_point = (H + dlt_sqrt) / A;
-        if (!ray_s.surrounds(intersect_point))
+        intersect_point = ( H + dlt_sqrt ) / A;
+        if ( !ray_s.surrounds ( intersect_point ) )
         {
             return false;
         }
     }
 
-    info.s = intersect_point;
-    info.i_point = r.pos_at(info.s);
-	Vec3 outward_norm = (info.i_point - this->center) / this->radius;
-    info.set_norm_orientation(r, outward_norm);
-	info.mat = this->mat;
+    info.s                  = intersect_point;
+    info.i_point            = r.pos_at ( info.s );
+    const Vec3 outward_norm = ( info.i_point - this->center ) / this->radius;
+    info.set_norm_orientation ( r, outward_norm );
+    info.mat = this->mat;
 
     return true;
+}
+
+AABB Sphere::bounding_box() const
+{
+    Vec3 r(radius, radius, radius);
+    return AABB(center - r, center + r);
 }

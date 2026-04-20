@@ -4,32 +4,32 @@
 
 #include "../../include/Math/Range.h"
 
-[[maybe_unused]] double Range::size  () const
+[[maybe_unused]] double Range::size () const
 {
-	return this->max - this->min;
+    return this->max - this->min;
 }
 
-[[maybe_unused]] double Range::has   (double x) const
+[[maybe_unused]] double Range::has (const double x) const
 {
-	return this->min <= x && x <= this->max;
+    return this->min <= x && x <= this->max;
 }
 
-double Range::clamp (double x) const
+double Range::clamp (const double x) const
 {
-	if (x > this->max)
-	{
-		return this->max;
-	}
+    if ( x > this->max )
+    {
+        return this->max;
+    }
 
-	if (x < this->min)
-	{
-		return this->min;
-	}
+    if ( x < this->min )
+    {
+        return this->min;
+    }
 
-	return x;
+    return x;
 }
 
-double Range::surrounds (double x) const
+double Range::surrounds (const double x) const
 {
-	return this->min < x && x < this->max;
+    return this->min < x && x < this->max;
 }

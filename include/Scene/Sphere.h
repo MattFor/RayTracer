@@ -8,16 +8,20 @@
 
 #include "IntersectableList.h"
 
-class Sphere : public Intersectable {
+class Sphere : public Intersectable
+{
 public:
-    Sphere (const Vec3& center, double radius, std::shared_ptr <Material> mat) :
-		center(center), radius(std::fmax(0.0, radius)), mat(mat) {};
-	bool hit (const Ray&, Range, IntersectionInfo&) const override;
+    Sphere (const Vec3& center, const double radius, const std::shared_ptr <Material>& mat) : center ( center ),
+                                                                                              radius ( std::fmax ( 0.0, radius ) ),
+                                                                                              mat ( mat ) {};
+    bool hit (const Ray&, Range, IntersectionInfo&) const override;
+
+    AABB bounding_box() const override;
 
 private:
-    Vec3 center;
-    double radius;
-	std::shared_ptr <Material> mat;
+    Vec3                       center;
+    double                     radius;
+    std::shared_ptr <Material> mat;
 };
 
 

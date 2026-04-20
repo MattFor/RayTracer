@@ -4,25 +4,25 @@
 
 #include "../../include/Rendering/Color.h"
 
-inline double linear_to_gamma (double linear_component)
+inline double linear_to_gamma (const double linear_component)
 {
-	if (linear_component > 0.0)
-	{
-		return std::sqrt(linear_component);
-	}
+    if ( linear_component > 0.0 )
+    {
+        return std::sqrt ( linear_component );
+    }
 
-	return 0.0;
+    return 0.0;
 }
 
 void Color::display (std::ostream& out, const Color& point_rgb)
 {
-	static const Range intensity (0.000, 0.999);
+    static const Range intensity ( 0.000, 0.999 );
 
-	// Before clamping apply gamma correction so that image viewers correctly recognize the image
-	// Now we clamp the result, so it stays within the 0, 255 range.
-    int r_byte = int (256.0 * intensity.clamp(linear_to_gamma(point_rgb.x)));
-    int g_byte = int (256.0 * intensity.clamp(linear_to_gamma(point_rgb.y)));
-    int b_byte = int (256.0 * intensity.clamp(linear_to_gamma(point_rgb.z)));
+    // Before clamping apply gamma correction so that image viewers correctly recognize the image
+    // Now we clamp the result, so it stays within the 0, 255 range.
+    const int r_byte = static_cast <int> ( 256.0 * intensity.clamp ( linear_to_gamma ( point_rgb.x ) ) );
+    const int g_byte = static_cast <int> ( 256.0 * intensity.clamp ( linear_to_gamma ( point_rgb.y ) ) );
+    const int b_byte = static_cast <int> ( 256.0 * intensity.clamp ( linear_to_gamma ( point_rgb.z ) ) );
 
     out << r_byte << ' ' << g_byte << ' ' << b_byte << '\n';
 }

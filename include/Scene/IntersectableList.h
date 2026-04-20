@@ -8,25 +8,29 @@
 
 #include <vector>
 
-#include "../RayTracer.h"
+#include "BVH.h"
 #include "Intersectable.h"
 
-class IntersectableList : public Intersectable {
+class IntersectableList : public Intersectable
+{
 public:
     IntersectableList () {};
-    IntersectableList (std::shared_ptr <Intersectable> intersectable)
+
+    explicit IntersectableList (const std::shared_ptr <Intersectable>& intersectable)
     {
-        this->add(intersectable);
+        this->add ( intersectable );
     };
 
-	std::vector <std::shared_ptr <Intersectable>> contents {};
+    std::vector <std::shared_ptr <Intersectable>> contents {};
 
-	[[maybe_unused]] void clear  ();
-	[[maybe_unused]] void remove (std::shared_ptr <Intersectable> intersectable);
+    void build_bvh ();
 
-	void add    (std::shared_ptr <Intersectable> intersectable);
+    [[maybe_unused]] void clear ();
+    [[maybe_unused]] void remove (std::shared_ptr <Intersectable> intersectable);
 
-	bool hit (const Ray&, Range, IntersectionInfo&) const override;
+    void add (std::shared_ptr <Intersectable> intersectable);
+    AABB bounding_box() const override;
+    bool hit (const Ray&, Range, IntersectionInfo&) const override;
 };
 
 

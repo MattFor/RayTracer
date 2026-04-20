@@ -6,14 +6,15 @@
 #define RAYTRACER_COLOR_H
 
 
-#include "../Math/Range.h"
 #include "../Math/Vec3.h"
+#include "../Math/Range.h"
 
-class Color : public Vec3 {
+class Color : public Vec3
+{
 public:
     using Vec3::Vec3;
 
-	[[maybe_unused]] Color (Vec3 v)
+    [[maybe_unused]] Color (const Vec3& v)
     {
         this->x = v.x;
         this->y = v.y;
