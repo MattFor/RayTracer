@@ -14,8 +14,17 @@ struct AABB
     Vec3 minimum;
     Vec3 maximum;
 
-    AABB() = default;
+    AABB()
+        : minimum(std::numeric_limits<double>::infinity(),
+                  std::numeric_limits<double>::infinity(),
+                  std::numeric_limits<double>::infinity()),
+          maximum(-std::numeric_limits<double>::infinity(),
+                  -std::numeric_limits<double>::infinity(),
+                  -std::numeric_limits<double>::infinity())
+    {}
+
     AABB(const Vec3& a, const Vec3& b) : minimum(a), maximum(b) {}
+
     bool hit(const Ray& r, Range t) const
     {
         for (int a = 0; a < 3; ++a)
@@ -42,7 +51,7 @@ struct AABB
             t.min = std::max(t.min, t0);
             t.max = std::min(t.max, t1);
 
-            if (t.max <= t.min)
+            if (t.max < t.min)
                 return false;
         }
 

@@ -67,6 +67,11 @@ BVHNode::BVHNode(std::vector<std::shared_ptr<Intersectable>>& objects, int start
     }
 
     box = surrounding_box(left->bounding_box(), right->bounding_box());
+
+    if (!std::isfinite(box.minimum.x) || !std::isfinite(box.maximum.x))
+    {
+        throw std::runtime_error("Invalid BVH bounding box");
+    }
 }
 
 bool BVHNode::hit(const Ray& r, const Range ray_s, IntersectionInfo& info) const
@@ -77,19 +82,30 @@ bool BVHNode::hit(const Ray& r, const Range ray_s, IntersectionInfo& info) const
     IntersectionInfo left_info, right_info;
 
     bool hit_left = left->hit(r, ray_s, left_info);
-    bool hit_right = right->hit(r, ray_s, right_info);
+    bool hit_right = false;
+
+    if (hit_left)
+    {
+        hit_right = right->hit(r, Range(ray_s.min, left_info.s), right_info);
+    }
+    else
+    {
+        hit_right = right->hit(r, ray_s, right_info);
+    }
 
     if (hit_left && hit_right)
     {
         info = (left_info.s < right_info.s) ? left_info : right_info;
         return true;
     }
-    else if (hit_left)
+
+    if (hit_left)
     {
         info = left_info;
         return true;
     }
-    else if (hit_right)
+
+    if (hit_right)
     {
         info = right_info;
         return true;
